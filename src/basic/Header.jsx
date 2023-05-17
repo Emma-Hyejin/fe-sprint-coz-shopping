@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {useState} from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import logo from '../logo/logo.png';
 
 const Header = () => {
     const [showModal, setShowModal] = useState(false);
@@ -14,7 +15,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="logo">
-                <Link to='/' element><img src="../logo/logo.png" alt="logo사진"/></Link>
+                <Link to='/' element><img src={logo} alt="logo사진"/></Link>
                 <h1>COZ Shopping</h1>
             </div>
             <div className="header-dropdown">
