@@ -1,0 +1,82 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  height: 100vh;
+}
+
+/*Main*/
+.main-container{
+  /* border: 1px solid rgb(240, 77, 104); */
+  margin: 0 76px;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+.list-section >h2{
+  margin-left: 20px;
+}
+
+.list-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+
+/*ProductLists*/
+.productlist-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-container ul{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+
+}
+
+.c{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
+  margin: 20px;
+  cursor:pointer;
+  
+}
+
+.c:focus{
+  /*비 인터랙티브 요소는 focus 요소가 작동 되지 않아html 에서 tabindex = 0 지정*/
+  /*인터렉티브 요소 : input, button, select*/
+  color:#412DD4;
+  border-bottom: 3px solid #412DD4;
+}
+
+
+.whole-items-container{
+  display: grid;
+  grid-template-columns:repeat(4, 1fr); /*4개의 열을 생성*/
+  gap: 10px;
+}
+
+.grid-item{
+  padding: 10px;
+}
+/*왜 작동이 안 될까? */
+.c:focus{
+  color:#412DD4;
+  border-bottom: 3px solid #412DD4;
+}
+
+
+
+
