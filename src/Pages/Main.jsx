@@ -4,7 +4,7 @@ import '../App.css';
 
 
 const Main = ({item}) => {
-    console.log(item);
+    // console.log(item);
     return (
         <div className="main-container">
             <div className="list-section">
