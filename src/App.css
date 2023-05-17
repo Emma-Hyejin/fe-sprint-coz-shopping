@@ -51,9 +51,12 @@
   font-weight: 800;
   margin: 20px;
   cursor:pointer;
+  
 }
 
 .c:focus{
+  /*비 인터랙티브 요소는 focus 요소가 작동 되지 않아html 에서 tabindex = 0 지정*/
+  /*인터렉티브 요소 : input, button, select*/
   color:#412DD4;
   border-bottom: 3px solid #412DD4;
 }
