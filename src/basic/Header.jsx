@@ -11,6 +11,10 @@ const Header = () => {
         setShowModal(!showModal);
     }
 
+    const closedDropwdown = () => {
+        setShowModal(!showModal);
+    }
+
 
     return (
         <div className="header">
@@ -25,8 +29,8 @@ const Header = () => {
                         <div id="drop-arrow"></div>
                         <ul className="drop-wrapper">
                             <li className="drop-list">OOO님, 안녕하세요!</li>
-                            <li className="drop-list"><Link to="/products/list" className="list">상품리스트 페이지</Link></li>
-                            <li className="drop-list"><Link to="/bookmark" className="list">북마크 페이지</Link></li>
+                            <li className="drop-list"><Link to="/products/list" className="list" onClick={closedDropwdown}>상품리스트 페이지</Link></li>
+                            <li className="drop-list"><Link to="/bookmark" className="list" onClick={closedDropwdown}>북마크 페이지</Link></li>
                         </ul>
                     </div>
                 : null }
