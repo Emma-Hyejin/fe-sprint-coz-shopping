@@ -19,7 +19,7 @@ const Header = () => {
                 <h1>COZ Shopping</h1>
             </div>
             <div className="header-dropdown">
-                <MenuIcon font-size="large" onClick={dropdown}></MenuIcon>
+                <MenuIcon fontSize="large" onClick={dropdown}></MenuIcon>
                 { showModal ? 
                     <div className="drop-down">
                         <div id="drop-arrow"></div>
