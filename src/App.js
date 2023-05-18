@@ -13,12 +13,21 @@ export const UserContext = createContext();
 function App() {
 
   const [list, setLists] = useState([]);
-  const [bookmark, setBookmark] = useState([{"id":3, "bookmark":true}, {"id":8, "bookmark":true}, {"id":51, "bookmark": true}, {"id": 97, "bookmark": true}]);
+  const [bookmark, setBookmark] = useState([]);
+  //{"id":3, "bookmark":true}, {"id":8, "bookmark":true}, {"id":51, "bookmark": true}, {"id": 97, "bookmark": true}
 
   const updateBookmark = (newBookmark) => {
     /* bookmark 값 업데이트 및 저장 : 전역 관리  */
     setBookmark(newBookmark);
   } 
+
+  /*localStorage에서 데이터 가져오기 */
+  useEffect(() => {
+    const storedBookmark = localStorage.getItem('myData');
+    if(storedBookmark){
+      setBookmark(JSON.parse(storedBookmark));
+    };
+  },[]);
 
   /*localStorage에 상태 저장 */
   useEffect(() => {
@@ -33,13 +42,6 @@ function App() {
     };
 }, [bookmark])/*북마크 상태가 변경 될 때마다 재랜더링*/
 
-  /*localStorage에서 데이터 가져오기 */
-  useEffect(() => {
-    const storedBookmark = localStorage.getItem('myData');
-    if(storedBookmark){
-      setBookmark(JSON.parse(storedBookmark));
-    };
-  },[]);
     
   useEffect(() => {
       fetch('http://cozshopping.codestates-seb.link/api/v1/products?count=4')  
