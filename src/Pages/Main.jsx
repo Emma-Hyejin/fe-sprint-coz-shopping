@@ -10,7 +10,7 @@ const Main = ({item, total}) => {
     const {bookmark, updateBookmark} = useContext(UserContext);
 
     const mainBookmark = total.filter(e => {
-        return bookmark.some(el => e.id === el.id);
+        return bookmark.slice(0,4).some(el => e.id === el.id);
     })
 
 
