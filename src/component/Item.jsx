@@ -35,7 +35,7 @@ const Item = ({item}) => {
 
         if(!isDuplicate && isBookmarked){
             updateBookmark([ ...bookmark ,{id: itemId, bookmark: isBookmarked}])
-           
+
             //넘겨 받는 값을 handleBookmarkChange로 넘겨 받고 저장. 
 
         }else if(isDuplicate && !isBookmarked){
@@ -62,9 +62,12 @@ const Item = ({item}) => {
     const clickModal = () =>{
         setPopup(!popup);
     }
-  
-    const toggleBookmark = () => { 
-        setChange(!change);
+
+    const starChange = () => {
+        //Item 컴포넌트로 들어오는 객체 배열 요소들의 id와 bookmark의 id가 동일할 때, true값으로 starOn 지정
+        const bookedmarkedItem = bookmark.find((b) => b.id === item.id);
+        //bookmark 객체의 bookmark 상태 반환 ture인지 false인지 .. 기본으로 false 반환 
+        return bookedmarkedItem ? bookedmarkedItem.bookmark : false
     }
 
     if(item.type === 'Product'){
@@ -73,8 +76,8 @@ const Item = ({item}) => {
                 <div className="item type01" id={item.id} >
                     <div className="item-pic">
                         <img className="product-pic" src={item.image_url} alt="제품사진" onClick={clickModal}/>
-                        <img className="icon" alt="북마크 별" src={change ? starOn: starOff} onClick={() => {
-                            toggleBookmark();
+                        <img className="icon" alt="북마크 별" src={starChange() ? starOn : starOff} onClick={() => {
+                            setChange(!change);
                             handleBookmarkChange(item.id, !change); // starOn일때는 false니까 true값이 넘어가게됨 
 
                         }}/>
@@ -92,8 +95,8 @@ const Item = ({item}) => {
                         <img className="select-pic" src={item.image_url} alt="제품 사진" />
                         <img className="xvector" src={xvector} alt="x기호" onClick={clickModal}/>
                         <div className="modal-ex">
-                            <img className="modal-icon" src={change ? starOn: starOff}  alt="북마크 별"  onClick={() => {
-                            toggleBookmark();
+                            <img className="modal-icon" src={starChange() ? starOn : starOff}  alt="북마크 별"  onClick={() => {
+                            setChange(!change);
                             handleBookmarkChange(item.id, !change); // starOn일때는 false니까 true값이 넘어가게됨 
 
                         }}/>
@@ -110,8 +113,8 @@ const Item = ({item}) => {
                 <div className="item type02" id={item.id}>
                     <div className="item-pic">
                         <img className="product-pic" src={item.image_url} alt="제품사진" onClick={clickModal}/>
-                        <img className="icon" src={change ? starOn: starOff}  alt="북마크 별"  onClick={() => {
-                            toggleBookmark();
+                        <img className="icon" src={starChange() ? starOn : starOff}  alt="북마크 별"  onClick={() => {
+                            setChange(!change);
                             handleBookmarkChange(item.id, !change); // starOn일때는 false니까 true값이 넘어가게됨 
 
                         }}/>
@@ -125,8 +128,8 @@ const Item = ({item}) => {
                         <img className="select-pic" src={item.image_url} alt="제품 사진"  />
                         <img className="xvector" src={xvector} alt="x기호" onClick={clickModal}/>
                         <div className="modal-ex">
-                            <img className="modal-icon" src={change ? starOn: starOff}  alt="북마크 별"  onClick={() => {
-                            toggleBookmark();
+                            <img className="modal-icon" src={starChange() ? starOn: starOff}  alt="북마크 별"  onClick={() => {
+                            setChange(!change);
                             handleBookmarkChange(item.id, !change); // starOn일때는 false니까 true값이 넘어가게됨 
 
                         }}/>
@@ -142,8 +145,8 @@ const Item = ({item}) => {
                 <div className="item type03" id={item.id}>
                     <div className="item-pic">
                         <img className="product-pic" src={item.image_url} alt="제품사진" onClick={clickModal}/>
-                        <img className="icon" src={change ? starOn: starOff}  alt="북마크 별"  onClick={() => {
-                            toggleBookmark();
+                        <img className="icon" src={starChange() ? starOn: starOff}  alt="북마크 별"  onClick={() => {
+                            setChange(!change);
                             handleBookmarkChange(item.id, !change); // starOn일때는 false니까 true값이 넘어가게됨 
 
                         }}/>
@@ -160,8 +163,8 @@ const Item = ({item}) => {
                         <img className="select-pic" src={item.image_url} alt="제품 사진" />
                         <img className="xvector" src={xvector} alt="x기호" onClick={clickModal}/>
                         <div className="modal-ex">
-                            <img className="modal-icon" src={change ? starOn: starOff}  alt="북마크 별"  onClick={() => {
-                            toggleBookmark();
+                            <img className="modal-icon" src={starChange() ? starOn: starOff}  alt="북마크 별"  onClick={() => {
+                            setChange(!change);
                             handleBookmarkChange(item.id, !change); // starOn일때는 false니까 true값이 넘어가게됨 
 
                         }}/>
@@ -177,8 +180,8 @@ const Item = ({item}) => {
                 <div className="item type04" id={item.id}>
                     <div className="item-pic">
                         <img className="product-pic" src={item.brand_image_url} alt="브랜드 사진" onClick={clickModal}/>
-                        <img className="icon" src={change ? starOn: starOff}  alt="북마크 별 "  onClick={() => {
-                            toggleBookmark();
+                        <img className="icon" src={starChange() ? starOn: starOff}  alt="북마크 별 "  onClick={() => {
+                            setChange(!change);
                             handleBookmarkChange(item.id, !change); // starOn일때는 false니까 true값이 넘어가게됨 
 
                         }}/>
@@ -196,8 +199,8 @@ const Item = ({item}) => {
                         <img className="select-pic" src={item.brand_image_url}alt="제품 사진" />
                         <img className="xvector" src={xvector} alt="x기호" onClick={clickModal}/>
                         <div className="modal-ex">
-                            <img className="modal-icon" src={change ? starOn: starOff}  alt="북마크 별" onClick={() => {
-                            toggleBookmark();
+                            <img className="modal-icon" src={starChange() ? starOn: starOff}  alt="북마크 별" onClick={() => {
+                            setChange(!change);
                             handleBookmarkChange(item.id, !change); // starOn일때는 false니까 true값이 넘어가게됨 
 
                         }}/>
