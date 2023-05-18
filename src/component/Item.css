@@ -1,0 +1,107 @@
+
+.item{
+    margin: 20px;
+    height: 264px;
+    width: 264px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-pic{ 
+    height: 210px;
+    width: 264px;
+    border-radius:20px;
+}
+
+.select-pic{
+    width: 744px;
+    height: 480px;
+    position: absolute;
+    border-radius:12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-ex{
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.xvector{
+    width: 23px;
+    height: 23px;
+    position: relative;
+    top: -370px;
+    left: 700px;
+    cursor: pointer;
+    
+}
+.modal-title{
+    padding-left: 10px;
+}
+
+.item-pic{
+    position: relative;    
+}   
+
+.item-pic .icon{
+    position: absolute;
+    right:10px;
+    bottom: 20px;
+}
+
+/* .item-pic .icon:hover{
+    cursor:pointer;
+} */
+
+.item-content{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+.item-content div{
+    font-size:16px;
+    font-weight: 800;
+}
+
+#cEx{
+    text-align:right;
+}
+
+#bEx{
+    text-align:right;
+}
+
+.item-ex{
+    padding: 0 10px;
+}
+
+
+
+.section-title{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+
+/*264px x 210 */
+
+
+/*product*/
+.item-percent{
+    color: #452CDD;
+}
+
+.item-title{
+    font-weight:bolder;
+}
