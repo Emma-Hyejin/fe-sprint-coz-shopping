@@ -24,9 +24,14 @@
 }
 
 .list-wrapper{
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content:space-between; */
+  /*Main에서 4개만 보여주기 위한 */
+  display: grid;
+  grid-template-columns:repeat(4, 1fr); /*4개의 열을 생성*/
+  gap: 10px;
+
 }
 
 /*ProductLists*/
