@@ -176,7 +176,7 @@ const Item = ({item}) => {
             <>
                 <div className="item type04" id={item.id}>
                     <div className="item-pic">
-                        <img className="product-pic" src={item.brand_image_url} alt="브랜드 사진"/>
+                        <img className="product-pic" src={item.brand_image_url} alt="브랜드 사진" onClick={clickModal}/>
                         <img className="icon" src={change ? starOn: starOff}  alt="북마크 별 "  onClick={() => {
                             toggleBookmark();
                             handleBookmarkChange(item.id, !change); // starOn일때는 false니까 true값이 넘어가게됨 
@@ -193,7 +193,7 @@ const Item = ({item}) => {
                 </div>
                 {popup ? 
                     <Modal>
-                        <img className="select-pic" src={item.image_url}alt="제품 사진" />
+                        <img className="select-pic" src={item.brand_image_url}alt="제품 사진" />
                         <img className="xvector" src={xvector} alt="x기호" onClick={clickModal}/>
                         <div className="modal-ex">
                             <img className="modal-icon" src={change ? starOn: starOff}  alt="북마크 별" onClick={() => {
