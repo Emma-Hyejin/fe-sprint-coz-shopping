@@ -5,11 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
 }
-
-.storybook-header svg {
-  display: inline-block;
-  vertical-align: top;
+.storybook-logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .storybook-header h1 {
@@ -29,4 +30,20 @@
   color: #333;
   font-size: 14px;
   margin-right: 10px;
+}
+.dropwdown{
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}
+.storybook-menu{
+  display: flex;
+  flex-direction: row;
+}
+
+.storybook-lists{
+  background-color:#FFFFFF;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
+  border-radius: 10px;
+  padding:0;
 }

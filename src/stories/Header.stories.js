@@ -3,7 +3,6 @@ import { Header } from './Header';
 export default {
   title: 'Example/Header',
   component: Header,
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
@@ -11,12 +10,9 @@ export default {
   },
 };
 
-export const LoggedIn = {
+export const ModalOnOff = {
   args: {
-    user: {
-      name: 'Jane Doe',
-    },
+    click: false,
   },
 };
 
-export const LoggedOut = {};
